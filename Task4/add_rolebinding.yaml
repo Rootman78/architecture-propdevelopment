@@ -1,0 +1,56 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cluster-view
+  namespace: default
+subjects:
+- kind: User
+  name: view-user
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: cluster-viewer
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cluster-edit
+  namespace: default
+subjects:
+- kind: User
+  name: edit-user
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: cluster-worker
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cluster-admin
+  namespace: default
+subjects:
+- kind: User
+  name: admin-user
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+---
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cluster-view-secrets
+  namespace: default
+subjects:
+- kind: User
+  name: sectrets-view-user
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: cluster-view-secrets
+  apiGroup: rbac.authorization.k8s.io

@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: view-user
+  namespace: default
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: edit-user
+  namespace: default
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: default
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sectrets-view-user
+  namespace: default
